@@ -10,7 +10,7 @@
 <body>
     <h1>Deep Link Example</h1>
     
-    <a href="eveandboy://" id="app" >add id</a>
+    <a href="eveandboy://" id="app" >click</a>
     <script
         src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -20,7 +20,9 @@
         $(function(){
             console.log("package loaded")
             setTimeout(function(){
-                $("#app").trigger("click");
+                $("#app").trigger("click",function(){
+                    console.log("click called")
+                });
             },2000)
         })
         
