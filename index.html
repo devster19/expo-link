@@ -8,14 +8,17 @@
     
 </head>
 <body>
-    <h1>Deep Link Example</h1>
+    <h1>getInstalledRelatedApps</h1>
     
-    <!-- <a href="eveandboy://" id="app" >click</a> -->
-    <a href="www.google.com" id="app" >click</a>
+    <a href="eveandboy://" id="app" >click to open app</a>
+    
     <script>
-        window.onload = function(){
-            location.replace("eveandboy://")
-            
+        const installedApps = await navigator.getInstalledRelatedApps();
+        const nativeApp = installedApps.find(app => app.id === 'com.eveandboy.th');
+
+        if (nativeApp && doesVersionSendPushMessages(nativeApp.version)) {
+            console.log("nativeApp",nativeApp)
+        return;
         }
     </script>
         
