@@ -10,15 +10,11 @@
 <body>
     <h1>Deep Link Example</h1>
     
-    <a href="eveandboy://" id="app" >click to open app dummy</a>
+    <a href="eveandboy://" id="app" >xx</a>
     
     <script>
-        window.onload = openApp;
-        function openApp(){
-            window.location = 'eveandboy://';
-            //document.getElementById("app").click();
-            
-        }
+        window.onload = window.location.replace("eveandboy://");
+        
     </script>
 </body>
 </html>
