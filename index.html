@@ -13,13 +13,17 @@
     <a href="eveandboy://" id="app" >click to open app</a>
     
     <script>
-        const installedApps = await navigator.getInstalledRelatedApps();
-        const nativeApp = installedApps.find(app => app.id === 'com.eveandboy.th');
+        window.onload = checkInstalledApps;
+        const checkInstalledApps = async () => {
+            const installedApps = await navigator.getInstalledRelatedApps();
+            const nativeApp = installedApps.find(app => app.id === 'com.eveandboy.th');
 
-        if (nativeApp && doesVersionSendPushMessages(nativeApp.version)) {
-            console.log("nativeApp",nativeApp)
-        return;
+            if (nativeApp && doesVersionSendPushMessages(nativeApp.version)) {
+                console.log("nativeApp",nativeApp)
+            return;
+            }
         }
+        
     </script>
         
 </body>
