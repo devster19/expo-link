@@ -15,7 +15,8 @@
     <script>
         window.onload = openApp;
         function openApp(){
-            document.getElementById("app").dispatchEvent(new Event('click'));
+            console.log("window loaded")
+            document.getElementById("app").click();
             
         }
     </script>
