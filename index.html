@@ -8,20 +8,14 @@
     
 </head>
 <body>
-    <h1>getInstalledRelatedApps</h1>
+    <h1>Show list of install apps</h1>
     
     <a href="eveandboy://" id="app" >click to open app</a>
     
     <script>
-        window.onload = checkInstalledApps;
-        const checkInstalledApps = async () => {
-            const installedApps = await navigator.getInstalledRelatedApps();
-            const nativeApp = installedApps.find(app => app.id === 'com.eveandboy.th');
-
-            if (nativeApp && doesVersionSendPushMessages(nativeApp.version)) {
-                console.log("nativeApp",nativeApp)
-            return;
-            }
+        window.onload = async () => {
+            const listOfInstalledApps = await navigator.getInstalledRelatedApps();
+            console.log(listOfInstalledApps)
         }
         
     </script>
