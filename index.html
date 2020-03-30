@@ -10,23 +10,14 @@
 <body>
     <h1>Deep Link Example</h1>
     
-    <a href="eveandboy://" id="app" >click</a>
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous">
-    </script>
+    <!-- <a href="eveandboy://" id="app" >click</a> -->
+    <a href="www.google.com" id="app" >click</a>
     <script>
-        $(function(){
-            console.log("package loaded")
-            setTimeout(function(){
-                $("#app").trigger("click",function(){
-                    console.log("click called")
-                });
-            },2000)
-        })
-        
-        
+        window.onload = function(){
+            location.replace("eveandboy://")
+            
+        }
     </script>
+        
 </body>
 </html>
