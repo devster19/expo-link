@@ -10,13 +10,13 @@
 <body>
     <h1>Deep Link Example</h1>
     
-    <a href="eveandboy://">click to open app</a>
-    <p>Delay 3s before open app</p>
+    <a href="eveandboy://" id="app" >click to open app</a>
+    <p>Delay 3s before open add click</p>
     <script>
         window.onload = openApp;
         function openApp(){
             setTimeout(function(){
-                window.location = "eveandboy://"
+                document.getElementById("app").addEventListener("click")
             },3000)
             
         }
