@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Deep Link</title>
+    <title>check installed apps</title>
     
 </head>
 <body>
     <h1>Show list of install apps</h1>
     
     <a href="eveandboy://" id="app" >click to open app</a>
+    <div id="lists"></div>
     
     <script>
         window.onload = async () => {
             const listOfInstalledApps = await navigator.getInstalledRelatedApps();
             console.log(listOfInstalledApps)
+            let obj = JSON.stringify(listOfInstalledApps);
+            document.getElementById("lists").innerHTML = obj;
         }
         
     </script>
